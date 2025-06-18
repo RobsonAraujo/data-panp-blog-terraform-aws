@@ -22,8 +22,5 @@ provider "aws" {
 
 
 module "blog_instance" {
-  source        = "./modules/ec2_instance"
-  ami           = var.ami
-  instance_type = var.instance_type
-  instance_name = var.instance_name
+  source = "./modules/ec2_instance"
 }
