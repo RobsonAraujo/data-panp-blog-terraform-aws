@@ -6,18 +6,25 @@ terraform {
     }
   }
 
+  cloud {
+    organization = "datapanp-study-test"
+    workspaces {
+      name = "learn-terraform-aws"
+    }
+  }
+
   required_version = ">= 1.2.0"
 }
 
 provider "aws" {
-  region = "us-east-2"
+  region = var.region
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0fe972392d04329e1"
-  instance_type = "t2.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
 
   tags = {
-    Name = "DataPanpBlogRestAPI"
+    Name = var.instance_name
   }
 }
