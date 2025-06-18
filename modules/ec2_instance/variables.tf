@@ -15,3 +15,11 @@ variable "instance_name" {
   type        = string
   default     = "DataPanpBlogRestAPI"
 }
+
+variable "key_name" {
+  description = "MacBook-KeyPair.pem"
+  type        = string
+  default     = "MacBook-KeyPair"
+}
+
+
